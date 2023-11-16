@@ -54,6 +54,14 @@
 #define ES8388_CFG_I2S  4
 
 
+/*
+ * I2S configurations:
+ *
+ * ES8388_CFG_I2S 7 - added by @benwaterson
+ * DOUT and DIN are swapped used for A247
+ */
+
+
 /* on board led */
 #define BLINK_LED_PIN     19 // IO19 -> D5
 
@@ -113,6 +121,13 @@
 #define ES8388_PIN_LRCK 25
 #define ES8388_PIN_SCLK 27
 #define ES8388_PIN_MCLK 1
+#elif ES8388_CFG_I2S==7
+/* reversed dout/din */
+#define ES8388_PIN_DOUT 26
+#define ES8388_PIN_DIN 35
+#define ES8388_PIN_LRCK 25
+#define ES8388_PIN_SCLK 27
+#define ES8388_PIN_MCLK 0
 #endif
 
 
