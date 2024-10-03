@@ -264,8 +264,9 @@ void Audio_Setup(void)
 
 #ifdef TEENSYDUINO
 
+#ifdef LED_PIN
 const int ledPin = LED_PIN; /* pin configured in config.h */
-
+#endif
 
 AudioPlayQueue queue1;
 AudioPlayQueue queue2;
@@ -281,7 +282,9 @@ static int16_t *queueTransmitBuffer2;
 
 void Teensy_Setup()
 {
+	#ifdef LED_PIN
     pinMode(ledPin, OUTPUT);
+	#endif
     Midi_Setup();
 }
 
